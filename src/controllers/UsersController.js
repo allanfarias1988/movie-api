@@ -46,7 +46,7 @@ class UsersController {
     const user_uuid = req.user.uuid;
 
     if (!user_uuid) {
-      throw new AppError("Please enter your user ID!", 401);
+      throw new AppError("ID do usuário não informado!", 401);
     }
 
     const [user] = await knexConnect("users")
